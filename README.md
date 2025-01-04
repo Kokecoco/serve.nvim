@@ -1,6 +1,6 @@
 # serve.nvim
 
-|English|[日本語](https://www.github.com/Kokecoco/serve.nvim/README-jp.md)
+| English | [日本語](https://github.com/Kokecoco/serve.nvim/blob/main/README-jp.md) |
 
 `serve.nvim` is a Neovim plugin that allows you to start and stop a simple HTTP server directly from Neovim. By default, it uses Python's built-in HTTP server.
 

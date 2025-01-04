@@ -1,6 +1,6 @@
 # serve.nvim
 
-|[English](https://www.github.com/Kokecoco/serve.nvim/README.md)|日本語|
+| [English](https://github.com/Kokecoco/serve.nvim/blob/main/README.md) | 日本語 |
 
 `serve.nvim` は、Neovim からシンプルな HTTP サーバーを起動および停止できるプラグインです。デフォルトでは、Python の組み込み HTTP サーバーを使用します。
 
