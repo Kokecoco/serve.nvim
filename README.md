@@ -26,8 +26,23 @@
 
 ```lua
 use {
-    'yourusername/serve.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
+    'Kokecoco/serve.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+        require("serve")
+    end
+}
+```
+
+### Lazy.nvim
+
+```lua
+return {
+  "Kokecoco/serve.nvim",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  config = function()
+      require("serve")
+  end,
 }
 ```
 
@@ -88,7 +103,7 @@ This error occurs if the specified port is already in use. You can resolve the i
 
 ## Contributing
 
-For bug reports or feature requests, please visit the [GitHub Issues page](https://github.com/yourusername/serve.nvim/issues).
+For bug reports or feature requests, please visit the [GitHub Issues page](https://github.com/Kokecoco/serve.nvim/issues).
 
 ---
 

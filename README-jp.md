@@ -26,8 +26,23 @@
 
 ```lua
 use {
-    'yourusername/serve.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
+    'Kokecoco/serve.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+        require("serve")
+    end
+}
+```
+
+### Lazy.nvim
+
+```lua
+return {
+  "Kokecoco/serve.nvim",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  config = function()
+      require("serve")
+  end
 }
 ```
 
@@ -86,7 +101,7 @@ use {
 
 ## 貢献
 
-バグ報告や機能リクエストは [GitHub の Issues ページ](https://github.com/yourusername/serve.nvim/issues) までお願いします。
+バグ報告や機能リクエストは [GitHub の Issues ページ](https://github.com/Kokecoco/serve.nvim/issues) までお願いします。
 
 ---
 
