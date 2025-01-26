@@ -22,6 +22,8 @@
 
 ## インストール
 
+WSL2を使用している場合はwsl = trueを、そうでない場合はwsl = falseを指定してください。
+
 ### 使用例 (packer.nvim)
 
 ```lua
@@ -29,7 +31,7 @@ use {
     'Kokecoco/serve.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-        require("serve")
+        require("serve").setup({wsl = true})
     end
 }
 ```
@@ -41,7 +43,7 @@ return {
   "Kokecoco/serve.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-      require("serve")
+      require("serve").setup({wsl = true})
   end
 }
 ```
@@ -56,6 +58,7 @@ return {
 
 - HTTP サーバーを起動します。
 - 引数 `port` を指定しない場合、デフォルトのポート `8000` が使用されます。
+- wslをtrueにした場合、wslviewコマンドを使用して自動でブラウザが開きます。
 
 例:
 

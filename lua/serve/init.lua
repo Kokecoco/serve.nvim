@@ -3,6 +3,7 @@ local M = {}
 
 -- サーバーのプロセスを保持
 M.server_job = nil
+M.wsl = false
 
 -- サーバーを起動
 function M.start_server(port)
@@ -64,6 +65,11 @@ function M.stop_server()
     M.server_job = nil
 end
 
+function M.setup(opts)
+  M.wsl = opts["wsl"]
+  return true
+end
+
 -- Neovim終了時にサーバーを停止する
 vim.api.nvim_create_autocmd("VimLeavePre", {
     callback = function()
@@ -79,6 +85,9 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
 -- Neovimのコマンドを登録
 vim.api.nvim_create_user_command("Serve", function(args)
     M.start_server(tonumber(args.args))
+    if M.wsl then
+      vim.fn.system("wslview http://localhost:" .. tonumber(args.args))
+    end
 end, { nargs = "?" })
 
 vim.api.nvim_create_user_command("ServeStop", function()

@@ -22,6 +22,8 @@
 
 ## Installation
 
+Specify wsl=true if you're using WSL2, or wsl=false if you don't currently have it.
+
 ### Example (packer.nvim)
 
 ```lua
@@ -29,7 +31,7 @@ use {
     'Kokecoco/serve.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-        require("serve")
+        require("serve").setup({wsl = true})
     end
 }
 ```
@@ -41,7 +43,7 @@ return {
   "Kokecoco/serve.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-      require("serve")
+      require("serve").setup({wsl = true})
   end,
 }
 ```
@@ -56,6 +58,7 @@ return {
 
 - Starts the HTTP server.
 - If no `port` is provided, the default port `8000` is used.
+- If you set wsl to true, the browser will automatically open using the wslview command.
 
 Examples:
 
