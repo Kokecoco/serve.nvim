@@ -86,7 +86,7 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
 vim.api.nvim_create_user_command("Serve", function(args)
     M.start_server(tonumber(args.args))
     if M.wsl then
-      vim.fn.system("wslview http://localhost:" .. tonumber(args.args))
+      vim.fn.system("wslview http://localhost:" .. (args.args or "8000"))
     end
 end, { nargs = "?" })
 
